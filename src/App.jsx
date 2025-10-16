@@ -10,7 +10,7 @@ function App() {
     {
       upgradeName: "Add Click",
       description: "Increases score received from clicks by 1",
-      currentUpgrade: 0
+      currentUpgrade: 1
     },
     {
       upgradeName: "Click Multiplier",
@@ -21,6 +21,11 @@ function App() {
 
   function increaseClick(event) {
     event.preventDefault()
+    // console.log(count);
+    // console.log(upgrades[0].currentUpgrade);
+    // console.log(upgrades[1].currentUpgrade);
+    // console.log(count + (upgrades[0].currentUpgrade * upgrades[1].currentUpgrade));
+
     setCount(count + (upgrades[0].currentUpgrade * upgrades[1].currentUpgrade));
   }
 
