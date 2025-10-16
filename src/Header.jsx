@@ -2,7 +2,7 @@ export default function Header() {
     return(
         <>
             <header>
-                <h1 class>Mouse Clicker Game</h1>
+                <h1>Mouse Clicker Game</h1>
             </header>
         </>
     )
