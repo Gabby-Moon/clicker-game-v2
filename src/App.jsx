@@ -20,7 +20,7 @@ function App() {
   ])
 
   function increaseClick(event) {
-    event.preventDefualt()
+    event.preventDefault()
     setCount(count + (upgrades[0].currentUpgrade * upgrades[1].currentUpgrade));
   }
 
