@@ -6,7 +6,7 @@ import Footer from "./Footer.jsx";
 
 function App() {
   const [count, setCount] = React.useState(0);
-  const [upgrades, func] = React.useState([
+  const [upgrades, setUpgrade] = React.useState([
     {
       upgradeName: "Add Click",
       description: "Increases score received from clicks by 1",
@@ -14,7 +14,7 @@ function App() {
     },
     {
       upgradeName: "Click Multiplier",
-      description: "Multiplies score received from clicks by 1",
+      description: "Increase score Multiplier received from clicks by 1",
       currentUpgrade: 1
     }
   ])
@@ -29,10 +29,42 @@ function App() {
     setCount(count + (upgrades[0].currentUpgrade * upgrades[1].currentUpgrade));
   }
 
+  function increaseAddUpgrade(event) {
+    event.preventDefault()
+    setUpgrade([
+      {
+        upgradeName: "Add Click",
+        description: "Increases score received from clicks by 1",
+        currentUpgrade: upgrades[0].currentUpgrade + 1
+      },
+      {
+        upgradeName: "Click Multiplier",
+        description: "Increase score Multiplier received from clicks by 1",
+        currentUpgrade: upgrades[1].currentUpgrade
+      }
+    ]);
+  }
+
+  function increaseMultiUpgrade(event) {
+    event.preventDefault()
+    setUpgrade([
+      {
+        upgradeName: "Add Click",
+        description: "Increases score received from clicks by 1",
+        currentUpgrade: upgrades[0].currentUpgrade
+      },
+      {
+        upgradeName: "Click Multiplier",
+        description: "Increase score Multiplier received from clicks by 1",
+        currentUpgrade: upgrades[1].currentUpgrade + 1
+      }
+    ]);
+  }
+
   function ShowMulti() {
-    if (count >= 5) {
+    if (count >= 10) {
       return (
-        <div>
+        <div onClick={increaseMultiUpgrade}>
           <h3>{upgrades[1].upgradeName}</h3>
           <p>{upgrades[1].description}</p>
         </div>
@@ -45,7 +77,7 @@ function App() {
       <Header />
       <h2>Score: {count}</h2>
       <img onClick={increaseClick} src={cube}></img>
-      <div>
+      <div onClick={increaseAddUpgrade}>
         <h3>{upgrades[0].upgradeName}</h3>
         <p>{upgrades[0].description}</p>
       </div>
