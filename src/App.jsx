@@ -29,11 +29,27 @@ function App() {
     setCount(count + (upgrades[0].currentUpgrade * upgrades[1].currentUpgrade));
   }
 
+  function ShowMulti() {
+    if (count >= 5) {
+      return (
+        <div>
+          <h3>{upgrades[1].upgradeName}</h3>
+          <p>{upgrades[1].description}</p>
+        </div>
+      )
+    }
+  }
+
   return (
     <>
       <Header />
       <h2>Score: {count}</h2>
       <img onClick={increaseClick} src={cube}></img>
+      <div>
+        <h3>{upgrades[0].upgradeName}</h3>
+        <p>{upgrades[0].description}</p>
+      </div>
+      <ShowMulti />
       <Footer />
     </>
   )
