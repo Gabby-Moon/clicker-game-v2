@@ -64,7 +64,7 @@ function App() {
   function ShowMulti() {
     if (count >= 10) {
       return (
-        <div onClick={increaseMultiUpgrade}>
+        <div className='upgrade' onClick={increaseMultiUpgrade}>
           <h3>{upgrades[1].upgradeName}</h3>
           <p>{upgrades[1].description}</p>
         </div>
@@ -77,7 +77,7 @@ function App() {
       <Header />
       <h2>Score: {count}</h2>
       <img onClick={increaseClick} src={cube}></img>
-      <div onClick={increaseAddUpgrade}>
+      <div className='upgrade' onClick={increaseAddUpgrade}>
         <h3>{upgrades[0].upgradeName}</h3>
         <p>{upgrades[0].description}</p>
       </div>
