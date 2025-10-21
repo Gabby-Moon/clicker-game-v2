@@ -31,14 +31,11 @@ function App() {
     event.preventDefault()
     setUpgrade([
       {
-        upgradeName: "Add Click",
-        description: "Increases score received from clicks by 1",
+        ...upgrades[0],
         currentUpgrade: upgrades[0].currentUpgrade + 1
       },
       {
-        upgradeName: "Click Multiplier",
-        description: "Increase score Multiplier received from clicks by 1",
-        currentUpgrade: upgrades[1].currentUpgrade
+        ...upgrades[1]
       }
     ]);
   }
