@@ -1,7 +1,7 @@
 import Num from "./Num.jsx";
 
 export default function NumDisplay(props) {
-    const test = props.upgrades.map(obj => {
+    const nums = props.upgrades.map(obj => {
         return (
             <Num name={obj.upgradeName} number={obj.currentUpgrade - 1} />
         )
@@ -9,7 +9,7 @@ export default function NumDisplay(props) {
 
     return (
         <div id="num-display">
-            {test}
+            {nums}
         </div>
     )
 }
