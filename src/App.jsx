@@ -3,6 +3,7 @@ import './App.css'
 import cube from "../public/image/cube.png";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
+import Upgrade from './components/Upgrade.jsx';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -77,10 +78,7 @@ function App() {
       <Header />
       <h2>Score: {count}</h2>
       <img onClick={increaseClick} src={cube}></img>
-      <div className='upgrade' onClick={increaseAddUpgrade}>
-        <h3>{upgrades[0].upgradeName}</h3>
-        <p>{upgrades[0].description}</p>
-      </div>
+      <Upgrade upgradeName={upgrades[0].upgradeName} description={upgrades[0].description} increaseAddUpgrade={increaseAddUpgrade} />
       <ShowMulti />
       <Footer />
     </>
