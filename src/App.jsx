@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css'
 import cube from "../public/image/cube.png";
-import Header from "./Header.jsx";
-import Footer from "./Footer.jsx";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
 import Upgrade from './components/Upgrade.jsx';
 
 function App() {
@@ -57,17 +57,6 @@ function App() {
         currentUpgrade: upgrades[1].currentUpgrade + 1
       }
     ]);
-  }
-
-  function ShowMulti() {
-    if (count >= 10) {
-      return (
-        <div className='upgrade' onClick={increaseMultiUpgrade}>
-          <h3>{upgrades[1].upgradeName}</h3>
-          <p>{upgrades[1].description}</p>
-        </div>
-      )
-    }
   }
 
   return (
