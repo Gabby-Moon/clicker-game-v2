@@ -4,6 +4,7 @@ import cube from "../public/image/cube.png";
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
 import Upgrade from './components/Upgrade.jsx';
+import NumDisplay from './components/NumDisplay.jsx';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -74,6 +75,7 @@ function App() {
     <>
       <Header />
       <h2>Score: {count}</h2>
+      <NumDisplay upgrades={upgrades} />
       <img onClick={increaseClick} src={cube}></img>
       <Upgrade upgradeName={upgrades[0].upgradeName} description={upgrades[0].description} increaseUpgrade={increaseAddUpgrade} />
       {count > 10 && <Upgrade upgradeName={upgrades[1].upgradeName} description={upgrades[1].description} increaseUpgrade={increaseMultiUpgrade} />}
