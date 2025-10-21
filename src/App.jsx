@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css'
 import cube from "../public/image/cube.png";
+import cube2 from "../public/image/cube2.jpg";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Upgrade from './components/Upgrade.jsx';
@@ -60,7 +61,7 @@ function App() {
       <Header />
       <h2>Score: {count}</h2>
       <NumDisplay upgrades={upgrades} />
-      <img onClick={increaseClick} src={cube}></img>
+      <img onClick={increaseClick} src={cube2} id="miku"></img>
       <Upgrade upgradeName={upgrades[0].upgradeName} description={upgrades[0].description} increaseUpgrade={increaseAddUpgrade} />
       {count > 10 && <Upgrade upgradeName={upgrades[1].upgradeName} description={upgrades[1].description} increaseUpgrade={increaseMultiUpgrade} />}
       <Footer />
