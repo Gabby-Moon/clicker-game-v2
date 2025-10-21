@@ -78,7 +78,8 @@ function App() {
       <Header />
       <h2>Score: {count}</h2>
       <img onClick={increaseClick} src={cube}></img>
-      <Upgrade upgradeName={upgrades[0].upgradeName} description={upgrades[0].description} increaseAddUpgrade={increaseAddUpgrade} />
+      <Upgrade upgradeName={upgrades[0].upgradeName} description={upgrades[0].description} increaseUpgrade={increaseAddUpgrade} />
+      <Upgrade upgradeName={upgrades[1].upgradeName} description={upgrades[1].description} increaseUpgrade={increaseMultiUpgrade} />
       <ShowMulti />
       <Footer />
     </>
