@@ -41,9 +41,17 @@
   color: #888;
 }
 
+/*
+
+*/
+
 .upgrade {
-  background-color: rgb(29, 137, 113);
+  background-color: #137a7f;
   border-style: double;
-  border-color: rgb(81, 238, 140);
+  border-color: #86cecb;
   margin: 30px;
+}
+
+#num-display {
+  color: #e12885
 }
