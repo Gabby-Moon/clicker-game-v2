@@ -13,7 +13,7 @@ function App() {
     {
       upgradeName: "Add Click",
       description: "Increases score received from clicks by 1",
-      currentUpgrade: 1
+      currentUpgrade: 0
     },
     {
       upgradeName: "Click Multiplier",
@@ -31,7 +31,6 @@ function App() {
     event.preventDefault()
     setUpgrade([
       {
-        ...upgrades[0],
         currentUpgrade: upgrades[0].currentUpgrade + 1
       },
       {
@@ -60,7 +59,7 @@ function App() {
       <NumDisplay upgrades={upgrades} />
       <img onClick={increaseClick} src={cube2} id="miku"></img>
       <Upgrade upgradeName={upgrades[0].upgradeName} description={upgrades[0].description} increaseUpgrade={increaseAddUpgrade} />
-      {count > 10 && <Upgrade upgradeName={upgrades[1].upgradeName} description={upgrades[1].description} increaseUpgrade={increaseMultiUpgrade} />}
+      {count === 10 && <Upgrade upgradeName={upgrades[1].upgradeName} description={upgrades[1].description} increaseUpgrade={increaseMultiUpgrade} />}
       <Footer />
     </>
   )
